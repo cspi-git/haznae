@@ -1,0 +1,28 @@
+[
+    {
+        "name": "help",
+        "description": "Display the help menu."
+    },
+    {
+        "name": "reportban",
+        "description": "If enabled, a user will still be banned if they only have a report, even if it is not proven.",
+        "options": [
+            {
+                "type": "STRING",
+                "name": "option",
+                "description": "The option to set.",
+                "required": true,
+                "choices": [
+                    {
+                        "name": "Enable",
+                        "value": "enable"
+                    },
+                    {
+                        "name": "Disable",
+                        "value": "disable"
+                    }
+                ]
+            }
+        ]
+    }
+]
