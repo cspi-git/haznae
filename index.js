@@ -20,7 +20,7 @@
     // Functions
     const toSHA512 = (string)=>{return hash.sha512().update(string).digest("hex")}
     async function checkUser(member){
-        var response = await request(`${process.env.API_URL}haznae?uID=${member.user.id}`)
+        var response = await request(`${process.env.API_URL}api/v1/haznae?uID=${member.user.id}`)
         response = JSON.parse(response.body).data
 
         var serverSettings = await settings.findOne({ serverID: toSHA512(member.guild.id) })
