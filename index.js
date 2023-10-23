@@ -30,9 +30,7 @@
             serverSettings = await settings.findOne({ serverID: toSHA512(member.guild.id) })
         }
 
-        if(serverSettings.reportBan && response.reported || response.proven) try{
-            await member.ban("Malicious actor banned by Haznae.")
-        }catch{}
+        serverSettings.reportBan && response.reported || response.proven ? await member.ban("Malicious actor banned by Haznae.") : await member.kick("Malicious actor kicked by Haznae.")
     }
 
     async function cMembers(){
